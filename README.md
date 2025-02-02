@@ -1,5 +1,4 @@
 # FAQ Management System with Multilingual Support
-## Overview
 This project is a Node.js-based FAQ management system that enables multilingual support, automatic translations, and efficient caching using Redis. It provides a RESTful API for easy interaction and supports Docker for containerized deployment.
 
 ## Key Features
@@ -15,25 +14,28 @@ Before setting up the project, ensure you have the following installed:
 - MongoDB
 - Redis
 
-## Local Setup
+
+## Installation
+
 1. Clone the repository
+
 2. Install dependencies:
    ```bash
      npm install
     ```
-
 3. Set environment variables:
-
 
 4. Run the application:
    ```bash
    npm run dev
    ```
 
+
 ## Docker Deployment
+   To deploy using Docker, execute the following command:
    ```bash
     docker-compose up --build
-   ```
+ ```
 
 ## API Endpoints
 - `POST /api/faqs`: Create FAQ
@@ -43,3 +45,7 @@ Before setting up the project, ensure you have the following installed:
    ```bash
    npm test
    ```
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
