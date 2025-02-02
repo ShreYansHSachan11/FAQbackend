@@ -3,7 +3,7 @@ import Translation from "../utils/translate.js";
 import { cache, redisClient } from "../middleware/cache.middleware.js";
 
 const FAQController = {
-  // Create a new FAQ
+  
   async createFAQ(req, res) {
     try {
       const { question, answer, language = "en", translations = {} } = req.body;
@@ -12,17 +12,17 @@ const FAQController = {
         return res.status(400).json({ error: "Question and answer are required." });
       }
   
-      // Create new FAQ
+      
       const faq = new FAQ({ question, answer, language, translations });
       await faq.save();
   
-      // Fetch updated FAQs from MongoDB after adding the new FAQ
+      
       const faqs = await FAQ.find({}).lean();
   
-      // Filter the FAQs for the language of the newly added FAQ (or fetch all FAQs)
+      
       const filteredFAQs = faqs.filter(faq => faq.language === language);
   
-      // Cache the updated FAQ list for the specific language
+     
       const cacheKey = `faqs_${language}`;
       await cache.set(cacheKey, 3600, filteredFAQs);
   
@@ -36,21 +36,21 @@ const FAQController = {
   }
   ,
 
-  // Get all FAQs
+  
   async getFAQs(req, res) {
     try {
       const lang = req.query.lang || "en";
       const cacheKey = `faqs_${lang}`;
       
-      // Check for cached data
+     
       const cachedData = await cache.get(cacheKey);
       if (cachedData) {
         console.log("Serving from cache");
         return res.status(200).json(cachedData);
       }
 
-      // Fetch data from MongoDB
-      const faqs = await FAQ.find({}).lean(); // Convert MongoDB documents to plain objects
+      
+      const faqs = await FAQ.find({}).lean(); 
 
       if (!faqs.length) {
         console.log("No FAQs found in MongoDB");
