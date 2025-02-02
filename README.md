@@ -8,6 +8,11 @@ This project is a Node.js-based FAQ management system that enables multilingual 
 - RESTful API for seamless integration
 - Docker compatibility for easy deployment
 
+## Demo
+
+- Deployed Link :  https://sherlock-rose.vercel.app/dashboard
+
+
 ## Requirements
 Before setting up the project, ensure you have the following installed:
 - Node.js (v16 or later)
@@ -32,16 +37,17 @@ Before setting up the project, ensure you have the following installed:
 
 
 ## Docker Deployment
-   To deploy using Docker, execute the following command:
+To deploy using Docker, execute the following command:
    ```bash
     docker-compose up --build
- ```
+   ```
 
 ## API Endpoints
 - `POST /api/faqs`: Create FAQ
 - `GET /api/faqs?lang=en`: Retrieve FAQs (language optional)
 
 ## Testing
+   To run unit tests, use:
    ```bash
    npm test
    ```
