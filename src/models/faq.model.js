@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const FAQSchema = new mongoose.Schema({
-    
   question: {
     type: String,
     required: true,
@@ -25,9 +24,8 @@ const FAQSchema = new mongoose.Schema({
   language: {
     type: String,
     default: 'en',
-    enum: ['en', 'hi', 'bn', 'es', 'fr', 'ja', 'ja', 'ko', 'de', 'it', 'pa'], 
+    enum: ['en', 'hi', 'bn', 'es', 'fr', 'ja', 'ko', 'de', 'it', 'pa'], 
   },
- 
 },{ timestamps: true });
 
 FAQSchema.methods.getTranslatedQuestion = function (lang) {
@@ -38,4 +36,5 @@ FAQSchema.methods.getTranslatedAnswer = function (lang) {
   return this.translations.get(lang)?.answer || this.answer;  
 };
 
-module.exports = mongoose.model('FAQ', FAQSchema);
+const FAQ = mongoose.model('FAQ', FAQSchema);
+export default FAQ;

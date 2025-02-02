@@ -1,10 +1,10 @@
 {
   "name": "backendfaq",
   "version": "1.0.0",
-  "type":"module",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
-   "start": "node src/index.js",
+    "start": "node src/index.js",
     "dev": "nodemon -r dotenv/config src/index.js",
     "test": "mocha src/tests/**/*.test.js --timeout 5000"
   },
@@ -21,6 +21,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "google-translate-api-x": "^10.7.2",
     "ioredis": "^5.4.2",
     "mongoose": "^8.9.6",
     "multer": "^1.4.5-lts.1",
