@@ -10,7 +10,7 @@ This project is a Node.js-based FAQ management system that enables multilingual 
 
 ## Demo
 
-- Deployed Link :  https://sherlock-rose.vercel.app/dashboard
+- Deployed Link :  https://faqfrontend-shreyanshsachan11s-projects.vercel.app/
 
 
 ## Requirements
